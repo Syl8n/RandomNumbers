@@ -10,13 +10,13 @@ import org.springframework.stereotype.Service;
 @Service
 @Slf4j
 public class OrderingService {
-    public Map<String, Integer> ordering(){
+    public Map<Integer, String> ordering(){
         List<String> names = List.of("서진우", "변지혜", "이유민");
         List<Integer> pool = generateRandomNumberPool(1, names.size());
-        Map<String, Integer> order = new HashMap<>();
+        Map<Integer, String> order = new HashMap<>();
 
         for(String name : names){
-            order.put(name, getRandomIntFromPool(pool));
+            order.put(getRandomIntFromPool(pool), name);
         }
 
         return order;
